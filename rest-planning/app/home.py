@@ -28,18 +28,26 @@ class FishHandler(webapp2.RequestHandler):
             self.response.write(json.dumps(f_d))
         
 class Boat(ndb.Model):
-    id = ndb.StringProperty(required=True)
-    number = nsb.IntegerProperty
-    current_boat = ndb.StringProperty
-    arrival_date = 
-    departure_history
-
+    id = ndb.KeyProperty(required=True)
+    name = ndb.StringProperty
+    type = ndb.StringProperty
+    length = ndb.IntegerProperty
+    at_sea = ndb.BooleanProperty
 
 class BoatHandler(webapp2.RequestHandler):
+    def post(self):
+
+    def get(self, id=None):
 
 class Slip(ndb.Model):
+    id = ndb.KeyProperty(required=True)
+    number = ndb.IntegerProperty
+    current_boat = ndb.StringProperty
+    arrival_date = ndb.DateProperty
+    departure_history = ndb.StringProperty(repeat=True) 
 
-class SlipHansleR(webapp2.RequestHandler):
+
+class SlipHandler(webapp2.RequestHandler):
 
 
 
