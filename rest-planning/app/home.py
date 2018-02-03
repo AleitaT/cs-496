@@ -2,13 +2,14 @@
 # Author: Aleita Train
 # OSU ONLINE CS 496
 # WINTER 2018
-#
+# use 'make start' in the top directory to run locally
+#########################################################
 
 from google.appengine.ext import ndb
 import webapp2
 import json
 
-from models import Boat, BoatHandler, Slip, SlipHandler
+from models import Boat, BoatHandler, Slip, SlipHandler, BoatArrivalHandler
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
@@ -19,12 +20,13 @@ class MainPage(webapp2.RequestHandler):
 
 
 allowed_methods = webapp2.WSGIApplication.allowed_methods
-new_allowed_methods = allowed_methods.union(('PATCH',))
+new_allowed_methods = allowed_methods.union(('PATCH', 'PUT',))
 webapp2.WSGIApplication.allowed_methods = new_allowed_methods
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/boat', BoatHandler),
-    ('/boat/(.*)', SlipHandler),
-    ('/slip', BoatHandler),
-    ('/slip/(.*)', SlipHandler),
+    ('/boats', BoatHandler),
+    ('/boats/(.*)', BoatHandler),
+    ('/slips', SlipHandler),
+    ('/slips/(.*)/boat', BoatArrivalHandler),
+    ('/slips/(.*)', SlipHandler),
 ], debug=True)
