@@ -1,3 +1,9 @@
+#########################################################
+# Author: Aleita Train
+# OSU ONLINE CS 496
+# WINTER 2018
+#########################################################
+
 runtime: python27
 api_version: 1
 threadsafe: true
