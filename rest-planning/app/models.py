@@ -190,7 +190,15 @@ class SlipHandler(webapp2.RequestHandler):
     if id:
       slip = ndb.Key(urlsafe=id).get()
       if slip:
+        if slip.current_boat != "": 
+          boats = Boat.query().fetch()
+          for boat in boats:
+            id = boat.key.urlsafe()
+            if id == slip.current_boat:
+              boat.at_sea = True
+              boat.put()
         slip.key.delete()
+
         self.logging(200, 'INFO: 1 Slip deleted')
       else:
         self.logging(405, "ERROR: bad slip ID")
