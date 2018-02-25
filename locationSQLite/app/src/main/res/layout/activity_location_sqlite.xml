@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.mobilecloud.locationsqlite.locationSQLite">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="568dp"
+        android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/stringLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="16dp"
+                    android:fontFamily="sans-serif"
+                    android:padding="16dp"
+                    android:text="Type a message to store to the sqlite db"
+                    android:textColor="@color/cast_libraries_material_featurehighlight_outer_highlight_default_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/stringText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="16dp"
+                    android:inputType="textPersonName"
+                    android:padding="16dp" />
+
+
+                <Button
+                    android:id="@+id/submit_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_span="2"
+                    android:text="Button"
+                    android:textAlignment="center" />
+
+        <ListView
+            android:id="@+id/sql_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="2dp" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

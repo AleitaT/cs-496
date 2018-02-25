@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">locationSQLite</string>
+    <string name="title_activity_location_sqlite">locationSQLite</string>
+    <string name="latitude">Latitude:</string>
+    <string name="lat_output">lat output</string>
+    <string name="longitude">Longitude:</string>
+    <string name="output_goes_here">output goes here</string>
+</resources>
